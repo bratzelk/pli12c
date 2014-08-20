@@ -1,0 +1,74 @@
+# This program intentionally contains many semantic errors.
+# It is mainly used to compare error outputs between pli12c compilers.
+# By bratzelk 2012
+
+
+function main() returns int
+begin
+	declare x string initialize to 0;
+	declare y real initialize to 3;
+	declare z int initialize to 3.5;
+
+	write u;
+	write "Testing function!";
+	return 0;
+	return 0;
+	
+end
+
+function test(n : int) returns int
+begin
+
+	declare n int;
+	return 1.5;
+end
+
+function goodfunc(n : int) returns int
+begin
+	return 7;
+end
+
+function badfunc() returns int
+begin
+
+declare x int;
+declare x real;
+declare z string;
+declare p real;
+
+declare w bool initialize to true;
+
+read z;
+
+while 1.5 
+do x := 2;
+endwhile
+
+while ("str" > "str2")
+do x := 2;
+endwhile
+
+x := test2(2);
+x := test(2.2, true, "hello");
+x := test(2.2);
+x := goodfunc(12);
+x := "string";
+
+y := x + 2;
+
+w := not w;
+w := not x;
+w := -x;
+w := -z;
+
+z := goodfunc(12);
+
+x := goodfunc(12);
+x := goodfunc(missing_var);
+x := "hello";
+
+
+w := x and p;
+
+return 0;
+end

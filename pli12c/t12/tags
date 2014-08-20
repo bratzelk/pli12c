@@ -1,0 +1,115 @@
+Label	t12.c	/^} Label;$/
+Mt12	t12.c	/^main(int argc, char **argv)$/
+Mt12_getopt	t12_getopt.c	/^main (argc, argv)$/
+Mt12_getopt1	t12_getopt1.c	/^main (argc, argv)$/
+Storage	t12.c	/^} Storage;$/
+YYBACKUP	t12_parser.c	/^#define YYBACKUP(Token, Value)					\\$/
+YYID	t12_parser.c	/^YYID (i)$/
+YYPOPSTACK	t12_parser.c	/^#define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N/
+YYRECOVERING	t12_parser.c	/^#define YYRECOVERING()  (!!yyerrstatus)$/
+YYRHSLOC	t12_parser.c	/^#define YYRHSLOC(Rhs, K) ((Rhs)[K])$/
+YYSTYPE	t12_parser.c	/^	YYSTYPE;$/
+YYTRANSLATE	t12_parser.c	/^#define YYTRANSLATE(YYX)						\\$/
+YY_AT_BOL	t12_lexer.c	/^#define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_/
+YY_BUFFER_STATE	t12_lexer.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/
+YY_CHAR	t12_lexer.c	/^typedef unsigned char YY_CHAR;$/
+YY_FATAL_ERROR	t12_lexer.c	/^#define YY_FATAL_ERROR(msg) yy_fatal_error( msg )$/
+YY_INPUT	t12_lexer.c	/^#define YY_INPUT(buf,result,max_size) \\$/
+YY_LESS_LINENO	t12_lexer.c	/^    #define YY_LESS_LINENO(n)$/
+YY_SC_TO_UI	t12_lexer.c	/^#define YY_SC_TO_UI(c) ((unsigned int) (unsigned c/
+YY_STATE_EOF	t12_lexer.c	/^#define YY_STATE_EOF(state) (YY_END_OF_BUFFER + st/
+__attribute__	t12_getopt.c	/^__attribute__ ((unused))$/
+bool_reg	t12.c	/^bool_reg(int reg)$/
+bool_slot	t12.c	/^bool_slot(int slot)$/
+bools_are_equal	t12.c	/^bools_are_equal(bool a, bool b)$/
+check_instr	t12.c	/^check_instr(int which)$/
+check_reg	t12.c	/^check_reg(int reg)$/
+check_slot	t12.c	/^check_slot(int slot, bool check_valid, bool check_/
+checked_malloc	t12.c	/^checked_malloc(int num_bytes)$/
+exchange	t12_getopt.c	/^exchange (argv)$/
+execute_instr_at_pc	t12.c	/^execute_instr_at_pc(void)$/
+flex_int16_t	t12_lexer.c	/^typedef int16_t flex_int16_t;$/
+flex_int32_t	t12_lexer.c	/^typedef int32_t flex_int32_t;$/
+flex_int8_t	t12_lexer.c	/^typedef int8_t flex_int8_t;$/
+flex_uint16_t	t12_lexer.c	/^typedef uint16_t flex_uint16_t;$/
+flex_uint32_t	t12_lexer.c	/^typedef uint32_t flex_uint32_t;$/
+flex_uint8_t	t12_lexer.c	/^typedef uint8_t flex_uint8_t;$/
+getpid	t12_getopt.c	/^#define getpid() GetCurrentProcessId()$/
+init_all_regs	t12.c	/^init_all_regs(void)$/
+init_stack	t12.c	/^init_stack(void)$/
+int_reg	t12.c	/^int_reg(int reg)$/
+int_slot	t12.c	/^int_slot(int slot)$/
+lookup_label	t12.c	/^lookup_label(char *name)$/
+make_string_const	t12.c	/^make_string_const(char *orig)$/
+my_index	t12_getopt.c	/^my_index (str, chr)$/
+print_dynamic_context	t12.c	/^print_dynamic_context(void)$/
+real_reg	t12.c	/^real_reg(int reg)$/
+real_slot	t12.c	/^real_slot(int slot)$/
+record_instr	t12.c	/^record_instr(void)$/
+record_label	t12.c	/^record_label(char *name)$/
+report_error_and_exit	t12.c	/^report_error_and_exit(const char *msg)$/
+report_internal_error_and_exit	t12.c	/^report_internal_error_and_exit(const char *msg)$/
+report_perror_and_exit	t12.c	/^report_perror_and_exit(const char *msg)$/
+set_reg_any	t12.c	/^set_reg_any(int reg, int src)$/
+set_reg_bool	t12.c	/^set_reg_bool(int reg, bool value)$/
+set_reg_int	t12.c	/^set_reg_int(int reg, int value)$/
+set_reg_real	t12.c	/^set_reg_real(int reg, float value)$/
+set_reg_string	t12.c	/^set_reg_string(int reg, char *value)$/
+stack_slot	t12.c	/^#define stack_slot(n)       stack[top_slot - (n)]$/
+string_reg	t12.c	/^string_reg(int reg)$/
+string_slot	t12.c	/^string_slot(int slot)$/
+t12__getopt_initialize	t12_getopt.c	/^t12__getopt_initialize (argc, argv, optstring)$/
+t12__getopt_internal	t12_getopt.c	/^t12__getopt_internal (argc, argv, optstring, longo/
+t12_getopt	t12_getopt.c	/^t12_getopt (argc, argv, optstring)$/
+t12_getopt_long	t12_getopt1.c	/^t12_getopt_long (argc, argv, t12_options, long_opt/
+t12_getopt_long_only	t12_getopt1.c	/^t12_getopt_long_only (argc, argv, t12_options, lon/
+t12round	t12.c	/^t12round(float f)$/
+t12trunc	t12.c	/^t12trunc(float f)$/
+t12yy_delete_buffer	t12_lexer.c	/^    void t12yy_delete_buffer (YY_BUFFER_STATE  b )/
+t12yy_flush_buffer	t12_lexer.c	/^    void t12yy_flush_buffer (YY_BUFFER_STATE  b )$/
+t12yy_scan_string	t12_lexer.c	/^YY_BUFFER_STATE t12yy_scan_string (yyconst char * /
+t12yyalloc	t12_lexer.c	/^void *t12yyalloc (yy_size_t  size )$/
+t12yyensure_buffer_stack	t12_lexer.c	/^static void t12yyensure_buffer_stack (void)$/
+t12yyerror	t12_parser.c	/^void t12yyerror(const char *s)$/
+t12yyfree	t12_lexer.c	/^void t12yyfree (void * ptr )$/
+t12yyinit	t12_lexer.c	/^void t12yyinit(void)$/
+t12yypop_buffer_state	t12_lexer.c	/^void t12yypop_buffer_state (void)$/
+t12yypush_buffer_state	t12_lexer.c	/^void t12yypush_buffer_state (YY_BUFFER_STATE new_b/
+t12yyset_debug	t12_lexer.c	/^void t12yyset_debug (int  bdebug )$/
+t12yyset_in	t12_lexer.c	/^void t12yyset_in (FILE *  in_str )$/
+t12yyset_lineno	t12_lexer.c	/^void t12yyset_lineno (int  line_number )$/
+t12yyset_out	t12_lexer.c	/^void t12yyset_out (FILE *  out_str )$/
+t12yywrap	t12_lexer.c	/^int t12yywrap(void)$/
+unput	t12_lexer.c	/^#define unput(c) yyunput( c, (yytext_ptr)  )$/
+usage	t12.c	/^usage(void)$/
+yy_buffer_state	t12_lexer.c	/^struct yy_buffer_state$/
+yy_fatal_error	t12_lexer.c	/^static void yy_fatal_error (yyconst char* msg )$/
+yy_flex_strlen	t12_lexer.c	/^static int yy_flex_strlen (yyconst char * s )$/
+yy_flex_strncpy	t12_lexer.c	/^static void yy_flex_strncpy (char* s1, yyconst cha/
+yy_get_next_buffer	t12_lexer.c	/^static int yy_get_next_buffer (void)$/
+yy_get_previous_state	t12_lexer.c	/^    static yy_state_type yy_get_previous_state (vo/
+yy_init_globals	t12_lexer.c	/^static int yy_init_globals (void)$/
+yy_reduce_print	t12_parser.c	/^yy_reduce_print (yyvsp, yyrule)$/
+yy_set_bol	t12_lexer.c	/^#define yy_set_bol(at_bol) \\$/
+yy_set_interactive	t12_lexer.c	/^#define yy_set_interactive(is_interactive) \\$/
+yy_size_t	t12_lexer.c	/^typedef size_t yy_size_t;$/
+yy_stack_print	t12_parser.c	/^yy_stack_print (bottom, top)$/
+yy_state_type	t12_lexer.c	/^typedef int yy_state_type;$/
+yy_symbol_print	t12_parser.c	/^yy_symbol_print (yyoutput, yytype, yyvaluep)$/
+yy_symbol_value_print	t12_parser.c	/^yy_symbol_value_print (yyoutput, yytype, yyvaluep)/
+yy_trans_info	t12_lexer.c	/^struct yy_trans_info$/
+yydestruct	t12_parser.c	/^yydestruct (yymsg, yytype, yyvaluep)$/
+yyless	t12_lexer.c	/^#define yyless(n) \\$/
+yymore	t12_lexer.c	/^#define yymore() yymore_used_but_not_detected$/
+yyparse	t12_parser.c	/^yyparse (YYPARSE_PARAM)$/
+yystpcpy	t12_parser.c	/^yystpcpy (yydest, yysrc)$/
+yystrlen	t12_parser.c	/^yystrlen (yystr)$/
+yysyntax_error	t12_parser.c	/^yysyntax_error (char *yyresult, int yystate, int y/
+yyterminate	t12_lexer.c	/^#define yyterminate() return YY_NULL$/
+yytnamerr	t12_parser.c	/^yytnamerr (char *yyres, const char *yystr)$/
+yytokentype	t12_parser.c	/^   enum yytokentype {$/
+yytype_int16	t12_parser.c	/^typedef YYTYPE_INT16 yytype_int16;$/
+yytype_int8	t12_parser.c	/^typedef YYTYPE_INT8 yytype_int8;$/
+yytype_uint16	t12_parser.c	/^typedef YYTYPE_UINT16 yytype_uint16;$/
+yytype_uint8	t12_parser.c	/^typedef YYTYPE_UINT8 yytype_uint8;$/
+yyunput	t12_lexer.c	/^    static void yyunput (int c, register char * yy/

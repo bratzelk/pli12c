@@ -1,0 +1,45 @@
+# This program tells you whether a number is odd or even
+# By bratzelk 2012
+
+
+function main() returns int
+begin
+	declare x int initialize to 0;
+
+
+	write "Please enter an integer to find out if it is even or odd: ";
+	
+	read x;
+
+	write x;
+
+	if is_even(x) then
+		write " is even!\n";
+	else
+		write " is odd!\n";
+	endif
+	
+end
+
+function is_even(n : int) returns bool
+begin
+
+	declare quotient int;
+	declare remainder int;
+	
+	quotient := n / 2;
+	remainder := n - quotient * 2;
+		
+	if remainder = 0 then
+		return true;
+	else
+		return false;
+	endif
+
+end
+
+
+function test1() returns bool
+begin
+return true;
+end

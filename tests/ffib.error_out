@@ -1,0 +1,2 @@
+ffib.pli12, 15: call to undefined function 'fib'
+ffib.pli12, 28: type mismatch in return statement; actual int, expected real

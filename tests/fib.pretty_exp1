@@ -1,0 +1,24 @@
+function fib(n: int) returns int
+begin
+
+    if n <= 1 then
+        return 1;
+    else
+        return (fib(n - 1)) + (fib(n - 2));
+    endif
+end
+
+function main() returns int
+begin
+    declare k int;
+    declare f int;
+
+    write "Please input N: ";
+    read k;
+    write "Fibonacci number #";
+    write k;
+    write " is ";
+    write fib(k);
+    write "\n";
+    return 0;
+end

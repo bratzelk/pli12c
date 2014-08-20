@@ -1,0 +1,10 @@
+fp.pli12, 1: return value of main has type string; expected int
+fp.pli12, 3: type mismatch in initialization of 'x': assigning string to real
+fp.pli12, 5: left operand of '/' has type string: expected int or real
+fp.pli12, 5: right operand of '/' has type bool: expected int or real
+fp.pli12, 7: right operand of '+' has type string: expected int or real
+fp.pli12, 9: left operand of 'and' has type real: expected bool
+fp.pli12, 9: right operand of 'and' has type real: expected bool
+fp.pli12, 9: left operand of '+' has type string: expected int or real
+fp.pli12, 10: call to undefined function 'f'
+fp.pli12, 10: reference to undefined variable 'z'

@@ -1,0 +1,6 @@
+5d4
+< gcd3.pli12, 19: assignment to undefined variable 'u'
+9d7
+< gcd3.pli12, 38: type mismatch in argument 1 of call to 'trunc': actual int, expected real
+11d8
+< gcd3.pli12, 40: type mismatch in argument 1 of call to 'round': actual int, expected real

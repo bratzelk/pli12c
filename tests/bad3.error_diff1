@@ -1,0 +1,7 @@
+1c1,2
+< bad3.pli12: There is no function named 'main'
+---
+> bad3.pli12: there is no function named 'main'
+> bad3.pli12, 5: reference to undefined variable 'z'
+4d4
+< bad3.pli12, 8: variable 'x' redefined

@@ -1,0 +1,36 @@
+function main() returns int
+begin
+    declare x int;
+    declare y int;
+    declare quotient int;
+    declare remainder int;
+    declare temp int;
+
+    write "Please input two positive ints: ";
+    read x;
+    read y;
+    write "\n";
+    if x < y then
+        temp := x;
+        x := y;
+        y := temp;
+    else
+        write "leaving ints in original order\n";
+    endif
+    write "The gcd of ";
+    write x;
+    write " and ";
+    write y;
+    write " is ";
+    quotient := x / y;
+    remainder := x - (quotient * y);
+    while remainder != 0 do
+        x := y;
+        y := remainder;
+        quotient := x / y;
+        remainder := x - (quotient * y);
+    endwhile
+    write y;
+    write "\n";
+    return 0;
+end

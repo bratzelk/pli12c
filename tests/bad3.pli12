@@ -1,0 +1,19 @@
+function f() returns real
+begin
+	declare x real;
+
+	write f( x, z);
+end
+
+function f(x: int, y: int) returns int
+begin
+	declare x int;
+	declare z real;
+
+	read z;
+	u := 3;
+	read v;
+	z := true;
+
+	return "abc";
+end

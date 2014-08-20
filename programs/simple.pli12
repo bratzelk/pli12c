@@ -1,0 +1,5 @@
+#A very simple test file which basically just tests the function name.
+
+function simple_function() returns bool
+
+function another_function() returns int

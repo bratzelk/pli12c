@@ -1,0 +1,20 @@
+#Testing variable names...
+
+function simple_function() returns bool
+begin
+
+declare x int;
+
+
+return true;
+
+end
+
+
+function another_function() returns int
+begin
+
+declare x int;
+
+return 0;
+end

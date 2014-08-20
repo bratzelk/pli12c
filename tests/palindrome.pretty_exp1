@@ -1,0 +1,28 @@
+function main() returns int
+begin
+    declare s string;
+    declare len int;
+    declare front int;
+    declare back int;
+    declare palindrome bool;
+
+    write "Please input a string:\n";
+    read s;
+    len := string_length(s);
+    front := 0;
+    back := len - 1;
+    palindrome := true;
+    while front < back do
+        if (substring(s, front, 1)) != (substring(s, back, 1)) then
+            palindrome := false;
+        endif
+        front := front + 1;
+        back := back - 1;
+    endwhile
+    write "The assertion that <";
+    write s;
+    write "> is a palindrome is ";
+    write palindrome;
+    write "\n";
+    return 0;
+end

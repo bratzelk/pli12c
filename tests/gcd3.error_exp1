@@ -1,0 +1,8 @@
+gcd3.pli12, 8: variable 'quotient' redefined
+gcd3.pli12, 9: type mismatch in initialization of 'remainder': assigning real to int
+gcd3.pli12, 14: read into undefined variable 'w'
+gcd3.pli12, 18: assignment to undefined variable 'u'
+gcd3.pli12, 35: wrong number of arguments in call to 'string_length': actual 2, expected 1
+gcd3.pli12, 36: type mismatch in argument 1 of call to 'string_length': actual int, expected string
+gcd3.pli12, 37: wrong number of arguments in call to 'trunc': actual 2, expected 1
+gcd3.pli12, 39: wrong number of arguments in call to 'round': actual 2, expected 1

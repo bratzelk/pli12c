@@ -1,0 +1,137 @@
+ErrorRecord	pli12c.c	/^} ErrorRecord;$/
+Mpli12c	pli12c.c	/^main(int argc, char **argv)$/
+Mpli12c_getopt	pli12c_getopt.c	/^main (argc, argv)$/
+Mpli12c_getopt1	pli12c_getopt1.c	/^main (argc, argv)$/
+YYBACKUP	parser.c	/^#define YYBACKUP(Token, Value)                    /
+YYID	parser.c	/^YYID (yyi)$/
+YYPOPSTACK	parser.c	/^#define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N/
+YYRECOVERING	parser.c	/^#define YYRECOVERING()  (!!yyerrstatus)$/
+YYSTYPE	parser.c	/^} YYSTYPE;$/
+YYTRANSLATE	parser.c	/^#define YYTRANSLATE(YYX)						\\$/
+YY_AT_BOL	scanner.c	/^#define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_/
+YY_BUFFER_STATE	scanner.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/
+YY_CHAR	scanner.c	/^typedef unsigned char YY_CHAR;$/
+YY_FATAL_ERROR	scanner.c	/^#define YY_FATAL_ERROR(msg) yy_fatal_error( msg )$/
+YY_INPUT	scanner.c	/^#define YY_INPUT(buf,result,max_size) \\$/
+YY_LESS_LINENO	scanner.c	/^    #define YY_LESS_LINENO(n)$/
+YY_SC_TO_UI	scanner.c	/^#define YY_SC_TO_UI(c) ((unsigned int) (unsigned c/
+YY_STATE_EOF	scanner.c	/^#define YY_STATE_EOF(state) (YY_END_OF_BUFFER + st/
+__attribute__	pli12c_getopt.c	/^__attribute__ ((unused))$/
+add_builtin_functions	symbol.c	/^add_builtin_functions()$/
+add_function	symbol.c	/^add_function(const char *name, Type return_type,$/
+add_user_function	symbol.c	/^add_user_function(const char *name, Type return_ty/
+add_variable	symbol.c	/^add_variable(const char *name, Type type, bool is_/
+allocate	ast.c	/^\/\/include these for common functions such as all/
+analyze_prog	analyze.c	/^analyze_prog(Funcs prog_funcs)$/
+checked_fopen	pli12c.c	/^checked_fopen(const char *filename, const char *mo/
+checked_malloc	pli12c.c	/^checked_malloc(int num_bytes)$/
+checked_strdup	pli12c.c	/^checked_strdup(const char *s)$/
+compare_argument_number	analyze.c	/^compare_argument_number(Types arg_types, Exprs exp/
+compare_errors	pli12c.c	/^compare_errors(const void *a, const void *b)$/
+convert_binop	analyze.c	/^convert_binop(BinOp operator)$/
+convert_int_to_real	ast.c	/^convert_int_to_real(Expr int_expr)$/
+convert_params_to_types	symbol.c	/^convert_params_to_types(Params parameters)$/
+convert_type	analyze.c	/^convert_type(Type type)$/
+exchange	pli12c_getopt.c	/^exchange (argv)$/
+flex_int16_t	scanner.c	/^typedef int16_t flex_int16_t;$/
+flex_int32_t	scanner.c	/^typedef int32_t flex_int32_t;$/
+flex_int8_t	scanner.c	/^typedef int8_t flex_int8_t;$/
+flex_uint16_t	scanner.c	/^typedef uint16_t flex_uint16_t;$/
+flex_uint32_t	scanner.c	/^typedef uint32_t flex_uint32_t;$/
+flex_uint8_t	scanner.c	/^typedef uint8_t flex_uint8_t;$/
+function	symbol.c	/^\/\/Returns the status of a function (i.e. BUILTIN/
+get_slot_num	symbol.c	/^get_slot_num(const char *name, const char *functio/
+getpid	pli12c_getopt.c	/^#define getpid() GetCurrentProcessId()$/
+init_variables	symbol.c	/^init_variables(void)$/
+init_with_builtin_functions	symbol.c	/^init_with_builtin_functions(void)$/
+instr_to_code	t12.c	/^instr_to_code(Instr instr)$/
+lookup_function	symbol.c	/^lookup_function(const char *name, Type *return_typ/
+lookup_variable	symbol.c	/^lookup_variable(const char *name, const char *func/
+make_const	ast.c	/^make_const(Type type, int int_value, float real_va/
+make_declaration	ast.c	/^make_declaration(char *identifier, Type type, Cons/
+make_declarations	ast.c	/^make_declarations(Decl declaration, Decls declarat/
+make_expression	ast.c	/^make_expression(ExpressionType type, char *identif/
+make_expressions	ast.c	/^make_expressions(Expr expression, Exprs expression/
+make_function	ast.c	/^make_function(char *identifier, Params parameters,/
+make_parameter	ast.c	/^make_parameter(char *identifier, Type type, int li/
+make_parameters	ast.c	/^make_parameters(Param parameter, Params parameters/
+make_statement	ast.c	/^make_statement(StatementType type, char *identifie/
+make_statements	ast.c	/^make_statements(Stmt statement, Stmts statements)$/
+make_types	symbol.c	/^make_types(Type type)$/
+my_index	pli12c_getopt.c	/^my_index (str, chr)$/
+num_functions	symbol.c	/^num_functions(void)$/
+num_variables	symbol.c	/^num_variables(void)$/
+pli12c__getopt_initialize	pli12c_getopt.c	/^pli12c__getopt_initialize (argc, argv, optstring)$/
+pli12c__getopt_internal	pli12c_getopt.c	/^pli12c__getopt_internal (argc, argv, optstring, lo/
+pli12c_getopt	pli12c_getopt.c	/^pli12c_getopt (argc, argv, optstring)$/
+pli12c_getopt_long	pli12c_getopt1.c	/^pli12c_getopt_long (argc, argv, pli12c_options, lo/
+pli12c_getopt_long_only	pli12c_getopt1.c	/^pli12c_getopt_long_only (argc, argv, pli12c_option/
+pli12yy_delete_buffer	scanner.c	/^    void pli12yy_delete_buffer (YY_BUFFER_STATE  b/
+pli12yy_flush_buffer	scanner.c	/^    void pli12yy_flush_buffer (YY_BUFFER_STATE  b /
+pli12yy_scan_string	scanner.c	/^YY_BUFFER_STATE pli12yy_scan_string (yyconst char /
+pli12yyalloc	scanner.c	/^void *pli12yyalloc (yy_size_t  size )$/
+pli12yyensure_buffer_stack	scanner.c	/^static void pli12yyensure_buffer_stack (void)$/
+pli12yyerror	parser.c	/^void pli12yyerror(const char *s)$/
+pli12yyfree	scanner.c	/^void pli12yyfree (void * ptr )$/
+pli12yyinit	scanner.c	/^pli12yyinit(void)$/
+pli12yypop_buffer_state	scanner.c	/^void pli12yypop_buffer_state (void)$/
+pli12yypush_buffer_state	scanner.c	/^void pli12yypush_buffer_state (YY_BUFFER_STATE new/
+pli12yyset_debug	scanner.c	/^void pli12yyset_debug (int  bdebug )$/
+pli12yyset_in	scanner.c	/^void pli12yyset_in (FILE *  in_str )$/
+pli12yyset_lineno	scanner.c	/^void pli12yyset_lineno (int  line_number )$/
+pli12yyset_out	scanner.c	/^void pli12yyset_out (FILE *  out_str )$/
+pli12yywrap	scanner.c	/^pli12yywrap(void)$/
+pretty_prog	pretty.c	/^pretty_prog(FILE *fp, Funcs prog_funcs)$/
+print_declarations	pretty.c	/^print_declarations(Decls declarations)$/
+print_expression	pretty.c	/^print_expression(Expr expression)$/
+print_expressions	pretty.c	/^print_expressions(Exprs expressions)$/
+print_function	pretty.c	/^print_function(struct s_func function)$/
+print_parameters	pretty.c	/^print_parameters(Params parameters)$/
+print_statements	pretty.c	/^print_statements(Stmts statements, int indent_num)/
+record_error	pli12c.c	/^record_error(int linenum, const char *msg)$/
+report_all_errors	pli12c.c	/^report_all_errors(void)$/
+report_internal_error_and_exit	pli12c.c	/^report_internal_error_and_exit(const char *msg)$/
+report_perror_and_exit	pli12c.c	/^report_perror_and_exit(const char *msg)$/
+seq	t12.c	/^seq(Code code1, Code code2)$/
+translate_decls	codegen.c	/^translate_decls(Decls decls)$/
+translate_function	codegen.c	/^translate_function(Funcs remaining_functions)$/
+translate_params	codegen.c	/^translate_params(Params params)$/
+translate_prog	codegen.c	/^translate_prog(Funcs prog)$/
+translate_stmts	codegen.c	/^translate_stmts(Stmts stmts, Funcs func)$/
+unput	scanner.c	/^#define unput(c) yyunput( c, (yytext_ptr)  )$/
+usage	pli12c.c	/^usage(void)$/
+write_code	t12.c	/^write_code(FILE *fp, Code code)$/
+write_instr	t12.c	/^write_instr(FILE *fp, Instr instr)$/
+yy_buffer_state	scanner.c	/^struct yy_buffer_state$/
+yy_fatal_error	scanner.c	/^static void yy_fatal_error (yyconst char* msg )$/
+yy_flex_strlen	scanner.c	/^static int yy_flex_strlen (yyconst char * s )$/
+yy_flex_strncpy	scanner.c	/^static void yy_flex_strncpy (char* s1, yyconst cha/
+yy_get_next_buffer	scanner.c	/^static int yy_get_next_buffer (void)$/
+yy_get_previous_state	scanner.c	/^    static yy_state_type yy_get_previous_state (vo/
+yy_init_globals	scanner.c	/^static int yy_init_globals (void)$/
+yy_reduce_print	parser.c	/^yy_reduce_print (yyvsp, yyrule)$/
+yy_set_bol	scanner.c	/^#define yy_set_bol(at_bol) \\$/
+yy_set_interactive	scanner.c	/^#define yy_set_interactive(is_interactive) \\$/
+yy_size_t	scanner.c	/^typedef size_t yy_size_t;$/
+yy_stack_print	parser.c	/^yy_stack_print (yybottom, yytop)$/
+yy_state_type	scanner.c	/^typedef int yy_state_type;$/
+yy_symbol_print	parser.c	/^yy_symbol_print (yyoutput, yytype, yyvaluep)$/
+yy_symbol_value_print	parser.c	/^yy_symbol_value_print (yyoutput, yytype, yyvaluep)/
+yy_trans_info	scanner.c	/^struct yy_trans_info$/
+yydestruct	parser.c	/^yydestruct (yymsg, yytype, yyvaluep)$/
+yyless	scanner.c	/^#define yyless(n) \\$/
+yymore	scanner.c	/^#define yymore() yymore_used_but_not_detected$/
+yypact_value_is_default	parser.c	/^#define yypact_value_is_default(Yystate) \\$/
+yyparse	parser.c	/^yyparse (YYPARSE_PARAM)$/
+yystpcpy	parser.c	/^yystpcpy (yydest, yysrc)$/
+yystrlen	parser.c	/^yystrlen (yystr)$/
+yysyntax_error	parser.c	/^yysyntax_error (YYSIZE_T *yymsg_alloc, char **yyms/
+yytable_value_is_error	parser.c	/^#define yytable_value_is_error(Yytable_value) \\$/
+yyterminate	scanner.c	/^#define yyterminate() return YY_NULL$/
+yytnamerr	parser.c	/^yytnamerr (char *yyres, const char *yystr)$/
+yytokentype	parser.c	/^   enum yytokentype {$/
+yytype_int16	parser.c	/^typedef YYTYPE_INT16 yytype_int16;$/
+yytype_int8	parser.c	/^typedef YYTYPE_INT8 yytype_int8;$/
+yytype_uint16	parser.c	/^typedef YYTYPE_UINT16 yytype_uint16;$/
+yytype_uint8	parser.c	/^typedef YYTYPE_UINT8 yytype_uint8;$/
+yyunput	scanner.c	/^    static void yyunput (int c, register char * yy/

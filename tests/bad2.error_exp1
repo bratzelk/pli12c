@@ -1,0 +1,10 @@
+bad2.pli12, 1: return value of main has type real; expected int
+bad2.pli12, 1: main has arguments
+bad2.pli12, 1: variable 'u' redefined
+bad2.pli12, 4: variable 'x' redefined
+bad2.pli12, 6: reference to undefined variable 'z'
+bad2.pli12, 6: type mismatch in argument 1 of call to 'f': actual real, expected int
+bad2.pli12, 11: variable 'x' redefined
+bad2.pli12, 13: variable 'z' redefined
+bad2.pli12, 17: condition of if-then-else is real; should be bool
+bad2.pli12, 18: condition of while loop is real; should be bool

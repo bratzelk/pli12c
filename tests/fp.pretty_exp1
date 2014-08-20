@@ -1,0 +1,15 @@
+function main() returns string
+begin
+    declare x real initialize to "five";
+
+    write x - (" is " / true);
+    read x;
+    write (x + 0.815000) + "xyz";
+    write "abc";
+    if (x and 5.000000) or ("\\qwerty\"" + (- 0.750000)) then
+        x := 66;
+    else
+        x := 77;
+        write f(x, z);
+    endif
+end

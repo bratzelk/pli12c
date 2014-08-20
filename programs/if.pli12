@@ -1,0 +1,12 @@
+function main() returns int
+begin
+	declare x int initialize to 10;
+	declare y bool initialize to false;
+
+	if not y
+	then
+		write "yay!";
+	else
+		write "nay!";
+	endif
+end

@@ -1,0 +1,44 @@
+# This program tests whether a given string is a palindrome or not, i.e.
+# whether it is the same forwards and backwards.
+
+function main() returns int
+begin
+	declare s string;
+	declare len int;
+	declare front int;
+	declare back int;
+	declare front int;
+	declare palindrome bool;
+
+	write "Please input a string:\n";
+
+	read s;
+
+	len := string_length(s);
+	front := 0;
+	back := len - 1;
+
+	palindrome := true;
+
+	while front < back do
+	begin
+		# substring(s, i, j) returns the substring of s that starts at
+		# offset i and continuing on for up to j characters. The first
+		# character of the string is at offset 0.
+
+		if substring(front, s, 1) != substring(back, 1, t) then
+			palindrome := false;
+		endif
+
+		front := front + 1;
+		back := back - 1;
+	end
+
+	write "The assertion that <";
+	write s;
+	write "> is a palindrome is ";
+	write palindrome;
+	write "\n";
+
+	return -5.5;
+end

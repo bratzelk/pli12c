@@ -1,0 +1,44 @@
+function main() returns int
+begin
+    declare x real;
+    declare done bool;
+    declare count int;
+    declare sum real;
+    declare sumsq real;
+    declare mean real;
+    declare variance real;
+    declare stddev real;
+
+    write "Please input a list of real numbers, ending with a negative number\n";
+    count := 0;
+    sum := 0.000000;
+    sumsq := 0.000000;
+    read x;
+    done := x < 0;
+    while not done do
+        count := count + 1;
+        sum := sum + x;
+        sumsq := sumsq + (x * x);
+        read x;
+        done := x < 0;
+    endwhile
+    mean := sum / count;
+    write "The mean is ";
+    write mean;
+    write "\n";
+    variance := (sumsq / count) - ((sum / count) * (sum / count));
+    write "The variance is ";
+    write variance;
+    write "\n";
+    stddev := sqrt(variance);
+    write string_concat("The standard deviation", " is ");
+    write stddev;
+    write "\n";
+    write string_concat("The rounded standard deviation", " is ");
+    write round(stddev);
+    write "\n";
+    write string_concat("The truncated \"standard\"", " deviation is ");
+    write trunc(stddev);
+    write "\n";
+    return 0;
+end

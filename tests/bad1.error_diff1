@@ -1,0 +1,17 @@
+4,12c4,9
+< bad1.pli12, 5: left operand of '+' has type Undefined: expected int or real
+< bad1.pli12, 8: right operand of '+' has type string: expected int or real
+< bad1.pli12, 11: left operand of 'and' has type real: expected bool
+< bad1.pli12, 11: right operand of 'and' has type int: expected bool
+< bad1.pli12, 12: left operand of '+' has type string: expected int or real
+< bad1.pli12, 12: right operand of 'or' has type Undefined: expected bool
+< bad1.pli12, 12: call to undefined function 'f'
+< Need to convert, int_to_real!
+< Need to convert, int_to_real!
+---
+> bad1.pli12, 7: right operand of '+' has type string: expected int or real
+> bad1.pli12, 9: left operand of 'and' has type real: expected bool
+> bad1.pli12, 9: right operand of 'and' has type int: expected bool
+> bad1.pli12, 9: left operand of '+' has type string: expected int or real
+> bad1.pli12, 10: call to undefined function 'f'
+> bad1.pli12, 10: reference to undefined variable 'z'

@@ -1,0 +1,9 @@
+bad1.pli12, 1: return value of main has type real; expected int
+bad1.pli12, 3: type mismatch in initialization of 'x': assigning string to real
+bad1.pli12, 5: right operand of '+' has type string: expected int or real
+bad1.pli12, 7: right operand of '+' has type string: expected int or real
+bad1.pli12, 9: left operand of 'and' has type real: expected bool
+bad1.pli12, 9: right operand of 'and' has type int: expected bool
+bad1.pli12, 9: left operand of '+' has type string: expected int or real
+bad1.pli12, 10: call to undefined function 'f'
+bad1.pli12, 10: reference to undefined variable 'z'

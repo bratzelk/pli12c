@@ -1,0 +1,26 @@
+# This program intentionally has a main function with a parameter.
+# By bratzelk 2012
+
+
+function main(mistake : int) returns int
+begin
+	declare x int initialize to 0;
+
+
+	write "Testing function!";
+	return 0;
+	
+end
+
+function test1(n : int) returns int
+begin
+
+	declare x int;
+	return n;
+end
+
+
+function test2() returns int
+begin
+return 0;
+end

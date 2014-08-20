@@ -1,0 +1,26 @@
+function main(u :bool, u : bool) returns real
+begin
+	declare x real;
+	declare x int;
+
+	write f( x, z);
+end
+
+function f(x: int, y: int) returns int
+begin
+	declare x int;
+	declare z real;
+	declare z real;
+
+	read z;
+
+	if (z + 5.0) then
+		while z / 2 do
+			write z;
+			z:=z+1;
+		endwhile
+	else
+		write 0.0;
+	endif
+	return trunc(z);
+end

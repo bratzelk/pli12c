@@ -1,0 +1,9 @@
+function main() returns int
+begin
+	declare x int initialize to 0;
+	write "This is a test prog.\n";
+
+	while x < 3
+	do read x; write x;
+	endwhile
+end

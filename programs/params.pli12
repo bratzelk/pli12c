@@ -1,0 +1,29 @@
+function main() returns int
+begin
+	declare x int;
+	write "This is a test prog.\n";
+
+	read x;
+
+	x := x;
+	
+
+	x := 3;
+
+	x := do_stuff(7,2,1);
+end
+
+
+function do_stuff(a : int, b : int, c : int) returns int
+begin
+	declare d int;
+	declare e int initialize to 69;
+	return do_more_stuff(4,99,21);
+end
+
+
+function do_more_stuff(f : int, g : int, h : int) returns int
+begin
+	declare i int initialize to 87;
+	return i;
+end

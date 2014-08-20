@@ -1,0 +1,353 @@
+#!/bin/sh
+# vim: ts=4 sw=4 expandtab
+#
+# This is a script for running all the available tests on the PLI12 compiler.
+#
+# This script is intended to be run in the setup with the following directory
+# structure:
+#
+# project/
+# project/t12
+# project/pli12c
+# project/pli12c/tests
+#
+# The t12 executable is supposed to be in the t12 directory.
+# The pli12c executable is supposed to be in the pli12c directory.
+# The Runtests script and the test cases themselves are supposed to be
+# in the pli12c/tests directory.
+#
+# This script is deliberately not documented. To discover what it does,
+# what its options mean and how you can set up a default set of options,
+# you have to read its code.
+
+test_pretty=false
+test_exec=false
+detail_perf=false
+pli12c="../pli12c"
+t12="../../t12/t12"
+srcs=""
+
+usage="Usage: runtests [-12] [-pe] [-d] [-c=compiler] [-s=simulator] [-t src]"
+
+if test $# = 0 -a -r .runtests_arguments
+then
+    set - `cat .runtests_arguments` "$@"
+fi
+
+while getopts 123paedc:s:t: flag
+do
+    case "${flag}" in
+    1)  test_pretty=true
+        ;;
+    2)  test_pretty=true
+        test_exec=true
+        ;;
+    p)  test_pretty=true
+        ;;
+    e)  test_exec=true
+        ;;
+    d)  detail_perf=true
+        ;;
+    c)  pli12c="${OPTARG}"
+        ;;
+    s)  t12="${OPTARG}"
+        ;;
+    t)  srcs="${srcs} ${OPTARG}.pli12"
+        ;;
+    esac
+done
+
+if test "${test_pretty}" = false -a "${test_exec}" = false
+then
+    echo "You must enable at least some kinds of tests"
+    echo "${usage}"
+    exit 1
+fi
+
+if test ! -x "${pli12c}"
+then
+    echo "${pli12c} is not executable"
+    exit 1
+fi
+
+if test ! -x "${t12}"
+then
+    echo "${t12} is not executable"
+    exit 1
+fi
+
+if test -r .diff_opts
+then
+    diff_opts=`cat .diff_opts`
+else
+    diff_opts=""
+fi
+
+if test "${srcs}" = ""
+then
+    srcs=*.pli12
+fi
+
+num_tests=0
+num_failures=0
+failed_pretty=""
+passed_pretty=""
+failed_error=""
+passed_error=""
+failed_exec=""
+passed_exec=""
+
+num_runs=0
+> PERF
+
+all_exist=true
+for src in ${srcs}
+do
+    if test ! -r "${src}"
+    then
+        echo "${src} does not exist or is not readable"
+        all_exist=false
+    fi
+done
+
+if test "${all_exist}" = false
+then
+    exit 1
+fi
+
+if ${test_pretty}
+then
+    for src in ${srcs}
+    do
+        base=`basename "${src}" .pli12`
+        if test -r "${base}.pretty_exp1"
+        then
+            failed=""
+            genfiles="${base}.pretty_out ${base}.pretty_err"
+            ${pli12c} -p "${base}.pli12" "${base}.pretty_out" \
+                > "${base}.pretty_err" 2>&1
+            if test -s "${base}.pretty_err"
+            then
+                match=false
+                i=1
+                while test -r "${base}.error_exp${i}"
+                do
+                    if cmp -s "${base}.pretty_err" "${base}.error_exp${i}"
+                    then
+                        match=true
+                    fi
+
+                    diff ${diff_opts} "${base}.pretty_err" \
+                        "${base}.error_exp${i}" \
+                        > "${base}.error_diff${i}"
+                    genfiles="${genfiles} ${base}.error_diff${i}"
+
+                    i=`expr ${i} + 1`
+                done
+
+                if test "${match}" = false
+                then
+                    failed="no match for error output"
+                fi
+            else
+                match=false
+                i=1
+                while test -r "${base}.pretty_exp${i}"
+                do
+                    if cmp -s "${base}.pretty_out" "${base}.pretty_exp${i}"
+                    then
+                        match=true
+                    fi
+
+                    diff ${diff_opts} "${base}.pretty_out" \
+                        "${base}.pretty_exp${i}" \
+                        > "${base}.pretty_diff${i}"
+                    genfiles="${genfiles} ${base}.pretty_diff${i}"
+
+                    i=`expr ${i} + 1`
+                done
+
+                if test "${match}" = false
+                then
+                    failed="no match"
+                fi
+            fi
+
+            num_tests=`expr ${num_tests} + 1`
+            if test "${failed}" = ""
+            then
+                echo "PRETTYPRINT TEST ${base} PASSED"
+                /bin/rm ${genfiles} > /dev/null 2>&1
+                passed_pretty="${passed_pretty} ${base}"
+            else
+                echo "PRETTYPRINT TEST ${base} FAILED: ${failed}"
+                failed_pretty="${failed_pretty} ${base}"
+                num_failures=`expr ${num_failures} + 1`
+            fi
+        fi
+    done
+
+    echo
+fi
+
+if ${test_exec}
+then
+    for src in ${srcs}
+    do
+        base=`basename "${src}" .pli12`
+        if test -r "${base}.error_exp1"
+        then
+            genfiles="${base}.error_out"
+            ${pli12c} "${base}.pli12" "${base}.t12" \
+                > "${base}.error_out" 2>&1
+            if test ! -s "${base}.error_out"
+            then
+                failed="compilation did not generate error output"
+            else
+                match=false
+                i=1
+                while test -r "${base}.error_exp${i}"
+                do
+                    if cmp -s "${base}.error_out" "${base}.error_exp${i}"
+                    then
+                        match=true
+                    fi
+
+                    diff ${diff_opts} "${base}.error_out" \
+                        "${base}.error_exp${i}" \
+                        > "${base}.error_diff${i}"
+                    genfiles="${genfiles} ${base}.error_diff${i}"
+
+                    i=`expr ${i} + 1`
+                done
+
+                if test "${match}" = false
+                then
+                    failed="no match for error output"
+                fi
+            fi
+
+            num_tests=`expr ${num_tests} + 1`
+            if test "${failed}" = ""
+            then
+                echo "ERROR_REPORTING TEST ${base} PASSED"
+                /bin/rm ${genfiles} > /dev/null 2>&1
+                passed_error="${passed_error} ${base}"
+            else
+                echo "ERROR_REPORTING TEST ${base} FAILED: ${failed}"
+                failed_error="${failed_error} ${base}"
+                num_failures=`expr ${num_failures} + 1`
+            fi
+        elif test -r "${base}.run_in1" -a -r "${base}.run_exp1"
+        then
+            failed=""
+            # We leave ${base}.t12 around in case the programmer
+            # wants to see it.
+            genfiles="${base}.t12 ${base}.error_out"
+            ${pli12c} "${base}.pli12" "${base}.t12" \
+                > "${base}.error_out" 2>&1
+            if test "$?" != 0
+            then
+                failed="compilation failed"
+            elif test -s "${base}.error_out"
+            then
+                failed="compilation generated error output"
+            else
+                i=1
+                while test -r "${base}.run_in${i}" -a -r "${base}.run_exp${i}"
+                do
+                    rm -f .t12_static_count > /dev/null 2>&1
+                    rm -f .t12_dynamic_count > /dev/null 2>&1
+
+                    genfiles="${genfiles} ${base}.run_out${i}"
+                    genfiles="${genfiles} ${base}.run_err${i}"
+                    ${t12} "${base}.t12" < "${base}.run_in${i}" \
+                        > "${base}.run_out${i}" \
+                        2> "${base}.run_err${i}"
+                    if test "$?" != 0
+                    then
+                        failed="${failed} ${i}s"
+                    elif test -s "${base}.run_err"
+                    then
+                        failed="${failed} ${i}e"
+                    else
+                        if cmp -s "${base}.run_out${i}" "${base}.run_exp${i}"
+                        then
+                            num_runs=`expr ${num_runs} + 1`
+                            this_static=`cat .t12_static_count`
+                            this_dynamic=`cat .t12_dynamic_count`
+                            echo "${base} ${i} ${this_static} ${this_dynamic}" \
+                                >> PERF
+                        else
+                            diff ${diff_opts} \
+                                "${base}.run_out${i}" "${base}.run_exp${i}" \
+                                > "${base}.run_diff${i}"
+                            genfiles="${genfiles} ${base}.run_diff${i}"
+                            failed="${failed} ${i}"
+                        fi
+                    fi
+
+                    i=`expr ${i} + 1`
+                done
+
+                rm -f .t12_static_count > /dev/null 2>&1
+                rm -f .t12_dynamic_count > /dev/null 2>&1
+
+                if test "${failed}" != ""
+                then
+                    failed="some test runs failed: ${failed}"
+                fi
+            fi
+
+            num_tests=`expr ${num_tests} + 1`
+            if test "${failed}" = ""
+            then
+                echo "EXECUTION TEST ${base} PASSED"
+                rm ${genfiles} > /dev/null 2>&1
+                passed_exec="${passed_exec} ${base}"
+            else
+                echo "EXECUTION TEST ${base} FAILED: ${failed}"
+                failed_exec="${failed_exec} ${base}"
+                num_failures=`expr ${num_failures} + 1`
+            fi
+        fi
+    done
+
+    echo
+fi
+
+if test "${num_tests}" -eq 1
+then
+    testword="test"
+else
+    testword="tests"
+fi
+
+if test "${num_failures}" -eq 1
+then
+    failword="failure"
+else
+    failword="failures"
+fi
+
+
+if test "${num_failures}" -gt 0
+then
+    echo "SUMMARY: ${num_tests} ${testword}, ${num_failures} ${failword}"
+else
+    echo "SUMMARY: all ${num_tests} ${testword} PASSED"
+    if test "${num_runs}" -gt 0
+    then
+        if ${detail_perf}
+        then
+            detail_param="print_each=1"
+        else
+            detail_param=""
+        fi
+
+        echo
+        awk -f PerfSummary ${detail_param} < PERF
+    fi
+fi
+
+exit ${num_failures}

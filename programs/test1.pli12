@@ -1,0 +1,28 @@
+function test_function2(var1 : int, var2 : real, var3 : bool) returns bool
+begin
+	declare a bool initialize to false;
+	declare b real;
+
+	read b;
+	write "my first test function...";
+	
+	if 
+		b > 10.0 
+	then 
+		write ">10"; 
+	else
+		write "<= 10"; 
+	endif
+	
+	return var3 + var1;
+end
+
+function test_function1(var1 : int, var2 : real, var3 : bool) returns bool
+begin
+	declare a int initialize to 87;
+	declare b real;
+
+	var1 := 9;
+	
+	return var3;
+end

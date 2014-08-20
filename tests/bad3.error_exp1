@@ -1,0 +1,9 @@
+bad3.pli12: there is no function named 'main'
+bad3.pli12, 5: reference to undefined variable 'z'
+bad3.pli12, 5: wrong number of arguments in call to 'f': actual 2, expected 0
+bad3.pli12, 8: function 'f' redefined
+bad3.pli12, 10: variable 'x' redefined
+bad3.pli12, 14: assignment to undefined variable 'u'
+bad3.pli12, 15: read into undefined variable 'v'
+bad3.pli12, 16: type mismatch in assignment to 'z': assigning bool to real
+bad3.pli12, 18: type mismatch in return statement; actual string, expected int

@@ -1,0 +1,39 @@
+	{
+		prog = $1;
+		run  = $2;
+		this_static = $3;
+		this_dynamic = $4;
+
+		prog_runs[prog] = prog_runs[prog] + 1;
+		prog_static[prog] = prog_static[prog] + this_static;
+		prog_dynamic[prog] = prog_dynamic[prog] + this_dynamic;
+		execs++;
+	}
+END	{
+		total_progs = 0;
+		total_static = 0;
+		total_dynamic = 0;
+		for (p in prog_runs) {
+			this_static = prog_static[p] / prog_runs[p];
+			this_dynamic = prog_dynamic[p] / prog_runs[p];
+
+			if (print_each > 0) {
+				printf "%s static:  %d\n", p, this_static;
+				printf "%s dynamic: %.2f\n", p, this_dynamic;
+			}
+
+			total_progs = total_progs + 1;
+			total_static = total_static + this_static;
+			total_dynamic = total_dynamic + this_dynamic;
+		}
+
+		if (print_each > 0) {
+			printf "\n";
+		}
+
+		printf "Number of programs executed:  %d\n", total_progs;
+		printf "Number of program executions: %d\n", execs;
+		printf "Total of static instructions: %d\n", total_static;
+		printf "Total of average dynamic instructions: %.2f\n",
+			total_dynamic;
+	}

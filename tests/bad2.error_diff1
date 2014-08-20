@@ -1,0 +1,5 @@
+5c5,6
+< bad2.pli12, 6: call to undefined function 'f'
+---
+> bad2.pli12, 6: reference to undefined variable 'z'
+> bad2.pli12, 6: type mismatch in argument 1 of call to 'f': actual real, expected int

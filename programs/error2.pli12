@@ -1,0 +1,32 @@
+# This program intentionally has a main function which returns a bool instead of an int
+# By bratzelk 2012
+
+
+function main() returns bool
+begin
+	declare x int initialize to 0;
+
+
+	write "Testing function!";
+	return 0;
+	
+end
+
+function test1(n : int) returns int
+begin
+
+	declare x int;
+	declare y real;
+
+
+	x := 3.3;
+	y := 2;
+
+	return n;
+end
+
+
+function test2() returns int
+begin
+return 0;
+end
